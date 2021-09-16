@@ -18,5 +18,5 @@ class BankAccount {
 
         // Transfers "amount" of money from this account to "other"
         // Returns true if transfer was successful, false otherwise
-        bool transferMoney(const BankAccount& other, const int& amount);
+        bool transferMoney(BankAccount& other, const int& amount);
 };
