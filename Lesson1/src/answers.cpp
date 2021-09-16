@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 #include "answers.h"
 
 int sumTwoNum(const int& a, const int& b) {
