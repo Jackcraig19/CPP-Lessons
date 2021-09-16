@@ -22,10 +22,10 @@ void BankAccount::deposit(const int& amt) {
 }
 
 bool BankAccount::transferMoney(BankAccount& other, const int& amount) {
-    bool isPossible = other.withdraw(amount);
+    bool isPossible = withdraw(amount);
     if (isPossible) {
-        deposit(amount);
-    } else {
-        return false;
+        other.deposit(amount);
+        return true;
     }
+    return false;
 }

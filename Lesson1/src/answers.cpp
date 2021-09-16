@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 #include "answers.h"
 
 int sumTwoNum(const int& a, const int& b) {
@@ -42,5 +44,6 @@ int getSum(const int purchases[], const int& size) {
     for (int i = 0; i < size; i++) {
         totalSum += purchases[i];
     }
+    return totalSum;
 }
 
