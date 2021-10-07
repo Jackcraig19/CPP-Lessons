@@ -7,7 +7,7 @@
 int sumTwoNum(const int& a, const int& b);
 
 /**
- *  Prints a square of * characters to teh terminal (stdout)
+ *  Prints a square of * characters to the terminal (stdout)
  *  PARAM: width is the width and height of the square
  *  RETURN: nothing
  * 
