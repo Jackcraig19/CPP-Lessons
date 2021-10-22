@@ -3,7 +3,6 @@
 #include "answers.h"
 #include "bank.h"
 
-
 int main() {
     int sum = sumTwoNum(10,-5);
     if (sum != 5) 
