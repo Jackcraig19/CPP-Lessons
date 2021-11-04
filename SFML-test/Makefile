@@ -5,7 +5,10 @@ CFLAGS=-Wall -I$(IDIR)
 
 ODIR=./build
 
+LIBDIR=-L./lib
 LIBS=-lsfml-window -lsfml-graphics -lsfml-system
+
+FRAMEDIR=-F./frameworks
 
 _DEPS = game.h display.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
@@ -20,7 +23,7 @@ EXE=main
 all: $(EXE)
 
 $(EXE): $(OBJ)
-	$(CC) $(OBJ) -o $(EXE) $(LIBS)
+	$(CC) $(OBJ) -o $(EXE) $(FRAMEDIR) $(LIBDIR) $(LIBS)
 
 $(ODIR)/main.o: $(SRCDIR)/main.cpp $(IDIR)/game.h
 	$(CC) $(CFLAGS) $(SRCDIR)/main.cpp -c -o $@

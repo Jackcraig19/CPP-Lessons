@@ -2,9 +2,7 @@
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 800), "Game");
-
     
-
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
