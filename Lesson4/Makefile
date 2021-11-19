@@ -7,10 +7,10 @@ ODIR=./build
 
 LIBS=
 
-_DEPS =
+_DEPS = entity.hpp
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o
+_OBJ = main.o entity.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 EXE=main
@@ -22,8 +22,11 @@ all: $(EXE)
 $(EXE): $(OBJ)
 	$(CC) $(OBJ) -o $(EXE)
 
-$(ODIR)/main.o: $(SRCDIR)/main.cpp
+$(ODIR)/main.o: $(SRCDIR)/main.cpp $(SRCDIR)/entity.cpp $(IDIR)/entity.hpp
 	$(CC) $(CFLAGS) $(SRCDIR)/main.cpp -c -o $@
+
+$(ODIR)/entity.o: $(SRCDIR)/entity.cpp $(IDIR)/entity.hpp
+	$(CC) $(CFLAGS) $(SRCDIR)/entity.cpp -c -o $@
 
 clean:
 	rm -f $(ODIR)/*.o $(EXE)
